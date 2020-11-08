@@ -1,0 +1,10 @@
+.home-flex-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.home-background-image {
+    width: 100vw;
+    filter: grayscale(100%);
+}
+

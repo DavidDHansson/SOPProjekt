@@ -1,0 +1,51 @@
+.nav-flex-wrapper {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 100;
+
+    width: 100vw;
+    height: 80px;
+
+    background-color: var(--nav-color);
+    top: 0;
+    opacity: 0.9;
+    font-size: 18px;
+    color: var(--nav-text-color);
+    font-family: Roboto-Regular;
+}
+
+.nav-main-wrapper {
+    width: 65%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-main-wrapper > div {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.nav-main-wrapper > div:hover {
+    transform: translateY(-3px);
+}
+
+.nav-main-wrapper > div:first-child:hover {
+    transform: translateY(0px);
+}
+
+.nav-user-wrapper {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--button-color);
+    cursor: pointer;
+    transition: filter 0.3s;
+}
+
+.nav-user-wrapper:hover {
+    filter: brightness(90%);
+}
