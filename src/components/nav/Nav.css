@@ -14,6 +14,7 @@
     font-family: Roboto-Regular;
     transition: background-color 0.5s;
     color: var(--nav-text-color-extended);
+    text-decoration: none;
 }
 
 .nav-extended {
@@ -31,16 +32,16 @@
     align-items: center;
 }
 
-.nav-main-wrapper > div {
+.nav-main-wrapper>div {
     cursor: pointer;
     transition: transform 0.3s;
 }
 
-.nav-main-wrapper > div:hover {
+.nav-main-wrapper>div:hover {
     transform: translateY(-3px);
 }
 
-.nav-main-wrapper > div:first-child:hover {
+.nav-main-wrapper>div:first-child:hover {
     transform: translateY(0px);
     cursor: default;
 }
@@ -68,4 +69,15 @@
     align-items: center;
     font-size: 18px;
     font-family: Roboto-Bold;
+}
+
+.nav-remove-link-styling {
+    text-decoration: none;
+    color: var(--nav-text-color-extended);
+    cursor: pointer;
+}
+
+.nav-remove-link-styling:active {
+    color: var(--nav-text-color-extended);
+    cursor: pointer;
 }
