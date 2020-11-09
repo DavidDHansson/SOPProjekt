@@ -44,7 +44,7 @@ export default function Nav() {
             </Link>
 
             <div className="nav-user-wrapper">
-                <Link className="nav-user-button nav-remove-link-styling" onClick={() => scrollToTop()} to="/user" exact={true}>
+                <Link className="nav-user-button nav-remove-link-styling" onClick={() => scrollToTop()} to="/user">
                     <div>Kom i gang</div>
                 </Link>
             </div>
