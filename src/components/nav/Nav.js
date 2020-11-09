@@ -1,4 +1,4 @@
-import React, { useEffects } from 'react'
+import React, { useEffect } from 'react'
 import "./Nav.css";
 
 export default function Nav() {
@@ -11,11 +11,9 @@ export default function Nav() {
                 if(!top) {
                     nav.classList.add("nav-extended");
                     nav.classList.remove("nav-not-extended");
-                    console.log("open");
                 } else {
                     nav.classList.add("nav-not-extended");
                     nav.classList.remove("nav-extended");
-                    console.log("close");
                 }
             }
         });
@@ -37,7 +35,7 @@ export default function Nav() {
             </div>
 
             <div className="nav-user-wrapper">
-                <div>Kom i gang</div>
+                <div className="nav-user-button">Kom i gang</div>
             </div>
 
         </div>

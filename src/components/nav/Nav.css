@@ -10,10 +10,10 @@
 
     top: 0;
     opacity: 0.9;
-    font-size: 18px;
-    color: var(--nav-text-color);
+    font-size: 20px;
     font-family: Roboto-Regular;
     transition: background-color 0.5s;
+    color: var(--nav-text-color-extended);
 }
 
 .nav-extended {
@@ -50,11 +50,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.nav-user-button:hover {
+    filter: brightness(90%);
+}
+
+.nav-user-button {
     background-color: var(--button-color);
     cursor: pointer;
     transition: filter 0.3s;
-}
-
-.nav-user-wrapper:hover {
-    filter: brightness(90%);
+    width: 55%;
+    height: 55%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-family: Roboto-Bold;
 }

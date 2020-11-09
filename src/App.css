@@ -6,7 +6,8 @@
 /* ROOT */
 :root {
     --nav-color: #141C26;
-    --nav-text-color: #cfcfcf;
+    --nav-text-color: #000;
+    --nav-text-color-extended: #cfcfcf;
     --button-color: #433BBF;
 
     --theme-color-1: #141C26;
