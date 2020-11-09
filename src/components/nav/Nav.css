@@ -41,11 +41,6 @@
     transform: translateY(-3px);
 }
 
-.nav-main-wrapper>div:first-child:hover {
-    transform: translateY(0px);
-    cursor: default;
-}
-
 .nav-user-wrapper {
     width: 15%;
     display: flex;

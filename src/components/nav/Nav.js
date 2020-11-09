@@ -36,7 +36,6 @@ export default function Nav() {
         <div className="nav-flex-wrapper" id="nav">
 
             <Link className="nav-main-wrapper nav-remove-link-styling" onClick={() => scrollToTop()} to="/" exact={true}>
-                <div>LOGO</div>
                 <div>Hjem</div>
                 <div>Priser</div>
                 <div>Kontakt</div>
