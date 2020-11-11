@@ -17,6 +17,7 @@ export default function User() {
                 {tickets.map((ticket, index) => <LoginOptionTicket viewModel={ticket} index={index}/>)}
                 </div>
             </div>
+            <div style={{backgroundColor: "#8694A6", height: "120vh"}}></div>
         </div>
     )
 }

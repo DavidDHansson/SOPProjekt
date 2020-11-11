@@ -1,0 +1,11 @@
+.profile-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-auth0 {
+    height: 50vh;
+    width: 100%;
+}

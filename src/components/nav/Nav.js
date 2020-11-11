@@ -8,7 +8,7 @@ export default function Nav() {
 
     useEffect(() => {
         document.addEventListener("scroll", () => {
-            const top = window.scrollY > window.screen.height;
+            const top = window.scrollY > (window.screen.height * 0.8);
             const nav = document.getElementById("nav");
             if (nav) {
                 if (top) {
