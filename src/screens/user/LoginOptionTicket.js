@@ -16,12 +16,23 @@ export default function LoginOptionTicket(props) {
                 <div className="user-ticket-desc">
                     {viewModel?.message ?? ""}
                 </div>
-                <RevealButton delay={index * 400}>
-                    <div className="user-ticket-start" style={{marginTop: "auto"}}>
-                        {"Start"}
-                    </div>
-                </RevealButton>
+                <Bottom index={index}/>
             </div>
         </Reveal>
     )
+}
+
+function Bottom(props) {
+    return (
+        <div style={{ marginTop: "auto" }} className="user-ticket-bottom-wrapper">
+            <RevealButton delay={props.index * 400}>
+                <div className="user-ticket-button">
+                    {"Start"}
+                </div>
+            </RevealButton>
+            <span className="user-ticket-logout">
+                {"Log ud"}
+            </span>
+        </div>
+    );
 }
