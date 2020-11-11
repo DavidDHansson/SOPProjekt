@@ -10,11 +10,16 @@
     --nav-text-color-extended: #cfcfcf;
     --button-color: #433BBF;
 
+    --title-color-dark: #242424;
+    --text-color-dark: #2e2e2e;
+
     --theme-color-1: #141C26;
     --theme-color-2: #3F4B59;
     --theme-color-3: #6D7B8C;
     --theme-color-4: #8694A6;
     --theme-color-5: #BFC7D9;
+
+    --dark-theme-1: #101A26;
 }
 
 /* FONTS */
