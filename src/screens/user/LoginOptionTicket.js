@@ -1,5 +1,6 @@
 import React from 'react'
 import "./User.css";
+
 import * as Reveal from 'react-reveal/Fade';
 import * as RevealButton from 'react-reveal/Jump';
 

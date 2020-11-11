@@ -35,12 +35,17 @@ export default function Nav() {
     return (
         <div className="nav-flex-wrapper" id="nav">
 
-            <Link className="nav-main-wrapper nav-remove-link-styling" onClick={() => scrollToTop()} to="/" exact={true}>
-                <div>Hjem</div>
+            <div className="nav-main-wrapper">
+                <Link className="nav-remove-link-styling" onClick={() => scrollToTop()} to="/" exact={true}>
+                    <div>Hjem</div>
+                </Link>
+                <Link className="nav-remove-link-styling" onClick={() => scrollToTop()} to="/profile">
+                    <div>Min profil</div>
+                </Link>
                 <div>Priser</div>
                 <div>Kontakt</div>
                 <div>FAQ</div>
-            </Link>
+            </div>
 
             <div className="nav-user-wrapper">
                 <Link className="nav-user-button nav-remove-link-styling" onClick={() => scrollToTop()} to="/user">

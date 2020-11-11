@@ -7,9 +7,10 @@ import {
     Route
 } from "react-router-dom";
 
-import Home from "./screens/home/Home.js";
-import User from "./screens/user/User.js";
-import Nav from "./components/nav/Nav.js";
+import Home     from "./screens/home/Home.js";
+import User     from "./screens/user/User.js";
+import Profile  from "./screens/profile/Profile.js";
+import Nav      from "./components/nav/Nav.js";
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                 <Switch>
                     <Route path="/" exact={true} component={Home} />
                     <Route path="/user" component={User} />
+                    <Route path="/profile" component={Profile} />
                 </Switch>
             </Auth0Provider>
         </Router>

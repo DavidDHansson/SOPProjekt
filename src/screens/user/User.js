@@ -1,6 +1,5 @@
 import React from 'react'
 import "./User.css";
-import { LogInButton, LogOutButton, AuthProfile } from "./auth0/Auth0.js";
 import LoginOptionTicket from "./LoginOptionTicket.js";
 
 export default function User() {
