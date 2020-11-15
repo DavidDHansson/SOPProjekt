@@ -87,6 +87,15 @@
     color: var(--nav-text-color-extended);
 }
 
+.user-ticket-button-disabled {
+    filter: brightness(50%);
+}
+
+.user-ticket-button-disabled:hover {
+    filter: brightness(50%);
+    cursor: no-drop;
+}
+
 .user-ticket-logout {
     text-decoration: underline;
     padding-top: 3px;
