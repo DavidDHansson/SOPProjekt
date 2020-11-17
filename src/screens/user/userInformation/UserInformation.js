@@ -4,13 +4,10 @@ import "./UserInformation.css";
 import UserInformationTicket from "./UserInformationTicket.js";
 
 export default function UserInformation() {
-
-    const items = ["", "", ""]
-    
     return (
         <div className="user-info-main-wrapper">
             <div className="user-info-sub-wrapper">
-                {items.map(item => <UserInformationTicket viewModel={item}/>)}
+                <UserInformationTicket/>
             </div>
         </div>
     )

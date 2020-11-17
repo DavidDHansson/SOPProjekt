@@ -127,3 +127,24 @@
     color: var(--link-color-hover);
     cursor: pointer;
 }
+
+/* DIVIDER */
+.custom-shape-divider-bottom-1605630478 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1605630478 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 113px;
+}
+
+.custom-shape-divider-bottom-1605630478 .shape-fill {
+    fill: #FFFFFF;
+}

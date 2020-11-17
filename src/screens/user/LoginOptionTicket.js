@@ -46,15 +46,15 @@ function FirebaseTicket(props) {
                 </div>
                 <div style={{ marginTop: "auto" }} className="user-ticket-bottom-wrapper">
 
-                    {!user
-                        ? <div className="user-ticket-button" onClick={() => signInWithGoogle()}>
+                    {user === null
+                        ? <div className="user-ticket-button user-ticket-button-enabled" onClick={() => signInWithGoogle()}>
                             {"Start"}
                         </div>
                         : <div className="user-ticket-button user-ticket-button-disabled">
                             {"Start"}
                         </div>}
 
-                    {user && (<span className="user-ticket-logout" onClick={() => firebaseAuth.signOut()}>
+                    {user !== null && (<span className="user-ticket-logout" onClick={() => firebaseAuth.signOut()}>
                         {"Log ud"}
                     </span>)}
 
