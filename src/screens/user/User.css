@@ -146,5 +146,5 @@
 }
 
 .custom-shape-divider-bottom-1605630478 .shape-fill {
-    fill: #FFFFFF;
+    fill: var(--theme-color-3);
 }

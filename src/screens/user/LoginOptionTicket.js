@@ -83,7 +83,7 @@ function Auth0Ticket(props) {
                     : (<div style={{ marginTop: "auto" }} className="user-ticket-bottom-wrapper">
 
                         {!isAuthenticated
-                            ? <div className="user-ticket-button user-ticket-button-enabled" onClick={() => loginWithRedirect()}>
+                            ? <div className="user-ticket-button user-ticket-button-enabled" onClick={() => loginWithRedirect({redirectUri: "http://localhost:3000/user"})}>
                                 {"Start"}
                             </div>
 
