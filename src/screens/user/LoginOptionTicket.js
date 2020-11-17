@@ -9,7 +9,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import "firebase/auth";
 
 import * as Reveal from 'react-reveal/Fade';
-import * as RevealButton from 'react-reveal/Jump';
 
 export default function LoginOptionTicket(props) {
 
@@ -48,11 +47,9 @@ function FirebaseTicket(props) {
                 <div style={{ marginTop: "auto" }} className="user-ticket-bottom-wrapper">
 
                     {!user
-                        ? <RevealButton delay={index * 300}>
-                            <div className="user-ticket-button" onClick={() => signInWithGoogle()}>
-                                {"Start"}
-                            </div>
-                        </RevealButton>
+                        ? <div className="user-ticket-button" onClick={() => signInWithGoogle()}>
+                            {"Start"}
+                        </div>
                         : <div className="user-ticket-button user-ticket-button-disabled">
                             {"Start"}
                         </div>}
@@ -71,7 +68,7 @@ function Auth0Ticket(props) {
 
     const { viewModel, index } = props;
     const { isAuthenticated, loginWithRedirect, logout, user, isLoading } = useAuth0();
-
+    
     return (
         <Reveal duration={1500}>
             <div className="user-ticket-wrapper">
@@ -86,11 +83,10 @@ function Auth0Ticket(props) {
                     : (<div style={{ marginTop: "auto" }} className="user-ticket-bottom-wrapper">
 
                         {!isAuthenticated
-                            ? <RevealButton delay={index * 300}>
-                                <div className="user-ticket-button" onClick={() => loginWithRedirect()}>
-                                    {"Start"}
-                                </div>
-                            </RevealButton>
+                            ? <div className="user-ticket-button user-ticket-button-enabled" onClick={() => loginWithRedirect()}>
+                                {"Start"}
+                            </div>
+
                             : <div className="user-ticket-button user-ticket-button-disabled">
                                 {"Start"}
                             </div>}

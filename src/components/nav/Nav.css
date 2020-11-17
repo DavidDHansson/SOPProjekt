@@ -71,7 +71,6 @@
     filter: brightness(90%);
 }
 
-
 .nav-remove-link-styling {
     text-decoration: none;
     color: var(--nav-text-color-extended);
