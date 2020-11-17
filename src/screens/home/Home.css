@@ -18,7 +18,7 @@
     margin-top: 25vh;
 }
 
-.home-info-wrapper:last-child {
+.home-info-wrapper:nth-last-child(2) {
     margin-bottom: 25vh;
 }
 
@@ -92,4 +92,21 @@
 
 .custom-shape-divider-bottom-1605608647 .shape-fill {
     fill: #BFC7D9;
+}
+
+.custom-shape-divider-bottom-1605614923 {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1605614923 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 110px;
+}
+
+.custom-shape-divider-bottom-1605614923 .shape-fill {
+    fill: var(--theme-color-4);
 }

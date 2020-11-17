@@ -2,7 +2,6 @@ import React from 'react'
 import "./Home.css";
 
 import backgroundImage from "./back.jpg";
-
 import InfoLorumIpsum from "./InfoLorumIpsum.js";
 
 export default function Home() {
@@ -11,8 +10,8 @@ export default function Home() {
             <img src={backgroundImage} className="home-background-image" alt="Security background" />
             <Divider1 />
             <InfoLorumIpsum />
-            {/* <div style={{ backgroundColor: "#8694A6", height: "100vh" }}></div>
-            <div style={{ backgroundColor: "#6D7B8C", height: "100vh" }}></div> */}
+            <div style={{ backgroundColor: "#8694A6", height: "100vh" }}></div>
+            <div style={{ backgroundColor: "#6D7B8C", height: "100vh" }}></div>
         </div>
     )
 }
