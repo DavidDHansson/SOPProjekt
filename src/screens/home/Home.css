@@ -15,7 +15,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--theme-color-4);
+    background-color: var(--theme-color-6);
     padding-top: 20vh;
 }
 
@@ -97,7 +97,7 @@
 }
 
 .home-info-color4 {
-    background-color: var(--theme-color-4);
+    background-color: var(--theme-color-6);
 }
 
 /* MEDIA */
@@ -152,7 +152,7 @@
 }
 
 .custom-shape-divider-bottom-color4 .shape-fill {
-    fill: var(--theme-color-4);
+    fill: var(--theme-color-6);
 }
 
 .custom-shape-divider-bottom-color5 .shape-fill {
