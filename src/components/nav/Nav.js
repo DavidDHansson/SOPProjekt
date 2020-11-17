@@ -39,9 +39,7 @@ export default function Nav() {
                 <Link className="nav-remove-link-styling" onClick={() => scrollToTop()} to="/" exact={true}>
                     <div>Hjem</div>
                 </Link>
-                <Link className="nav-remove-link-styling" onClick={() => scrollToTop()} to="/profile">
-                    <div>Min profil</div>
-                </Link>
+                <div>Min profil</div>
                 <div>Priser</div>
                 <div>Kontakt</div>
                 <div>FAQ</div>
