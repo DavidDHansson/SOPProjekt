@@ -1,6 +1,8 @@
 import React from 'react'
 import "./User.css";
+
 import LoginOptionTicket from "./LoginOptionTicket.js";
+import Footer from "../../components/footer/Footer.js";
 
 export default function User() {
 
@@ -18,6 +20,7 @@ export default function User() {
                 </div>
             </div>
             <div style={{backgroundColor: "#8694A6", height: "120vh"}}></div>
+            <Footer />
         </div>
     )
 }
