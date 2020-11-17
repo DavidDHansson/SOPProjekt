@@ -48,23 +48,29 @@
     align-items: center;
 }
 
+.nav-user-button {
+    font-size: 18px;
+    font-family: Roboto-Bold;
+
+    background-color: var(--button-color);
+    border-bottom-width: 0;
+
+    padding: 12px 24px;
+    margin-top: 3px;
+    border-radius: 6px;
+    transition: all 0.1s ease-in-out;
+}
+
 .nav-user-button:hover {
+    border-bottom-width: 0;
+    border-bottom: 4px solid var(--nav-text-color-extended);
+    margin-top: -3px;
+}
+
+.nav-user-button:active {
     filter: brightness(90%);
 }
 
-.nav-user-button {
-    background-color: var(--button-color);
-    cursor: pointer;
-    transition: filter 0.3s;
-    width: 55%;
-    height: 55%;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 18px;
-    font-family: Roboto-Bold;
-}
 
 .nav-remove-link-styling {
     text-decoration: none;
