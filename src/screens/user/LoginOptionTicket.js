@@ -15,6 +15,27 @@ export default function LoginOptionTicket(props) {
 
     const { viewModel, index } = props;
 
+    switch (viewModel.type) {
+        case "firebase":
+            return <FirebaseTicket viewModel={viewModel} index={index} />
+        case "auth0":
+            return <Auth0Ticket viewModel={viewModel} index={index} />
+        default:
+            return <></>
+    }
+}
+
+const firebaseAuth = firebase.auth();
+function FirebaseTicket(props) {
+
+    const { viewModel, index } = props;
+    const [user] = useAuthState(firebaseAuth);
+
+    function signInWithGoogle() {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        firebaseAuth.signInWithPopup(provider);
+    }
+
     return (
         <Reveal duration={1500}>
             <div className="user-ticket-wrapper">
@@ -24,84 +45,63 @@ export default function LoginOptionTicket(props) {
                 <div className="user-ticket-desc">
                     {viewModel?.message ?? ""}
                 </div>
-                <Bottom index={index} type={viewModel.type} />
+                <div style={{ marginTop: "auto" }} className="user-ticket-bottom-wrapper">
+
+                    {!user
+                        ? <RevealButton delay={index * 300}>
+                            <div className="user-ticket-button" onClick={() => signInWithGoogle()}>
+                                {"Start"}
+                            </div>
+                        </RevealButton>
+                        : <div className="user-ticket-button user-ticket-button-disabled">
+                            {"Start"}
+                        </div>}
+
+                    {user && (<span className="user-ticket-logout" onClick={() => firebaseAuth.signOut()}>
+                        {"Log ud"}
+                    </span>)}
+
+                </div>
             </div>
         </Reveal>
-    )
+    );
 }
 
-function Bottom(props) {
+function Auth0Ticket(props) {
 
-    const { isAuthenticated: auth0IsAuthenticated, loginWithRedirect: auth0LoginWithRedirect, logout: auth0Logout, user } = useAuth0();
-    const firebaseAuth = firebase.auth();
-
-    // const [ user ] = useAuthState(firebaseAuth);
-    // console.log(user.displayName);
-    // const { isAuthenticated: auth0IsAuthenticated, loginWithRedirect: auth0LoginWithRedirect, logout: auth0Logout, user } = useAuth0();
-    // console.log(user && user.name);
-
-
-    function login() {
-        switch (props.type) {
-            case "auth0":
-                auth0LoginWithRedirect();
-                break;
-            case "firebase":
-                const provider = new firebase.auth.GoogleAuthProvider();
-                firebaseAuth.signInWithPopup(provider);
-                break;
-            case "custom":
-                break;
-            default:
-                break;
-        }
-    }
-
-    function logout() {
-        switch (props.type) {
-            case "auth0":
-                auth0Logout();
-                break;
-            case "firebase":
-                firebaseAuth.signOut();
-                break;
-            case "custom":
-                break;
-            default:
-                break;
-        }
-    }
-
-    function isUserAuthenticated() {
-        switch (props.type) {
-            case "auth0":
-                return auth0IsAuthenticated
-            case "firebase":
-                return firebaseAuth.currentUser
-            case "custom":
-                break;
-            default:
-                break;
-        }
-    }
+    const { viewModel, index } = props;
+    const { isAuthenticated, loginWithRedirect, logout, user, isLoading } = useAuth0();
 
     return (
-        <div style={{ marginTop: "auto" }} className="user-ticket-bottom-wrapper">
-            { !isUserAuthenticated()
-
-                ? <RevealButton delay={props.index * 400}>
-                    <div className="user-ticket-button" onClick={() => login()}>
-                        {"Start"}
-                    </div>
-                </RevealButton>
-
-                : <div className="user-ticket-button user-ticket-button-disabled">
-                    {"Start"}
+        <Reveal duration={1500}>
+            <div className="user-ticket-wrapper">
+                <div className="user-ticket-title">
+                    {viewModel?.title ?? ""}
                 </div>
-            }
-            {isUserAuthenticated() && (<span className="user-ticket-logout" onClick={() => logout()}>
-                {"Log ud"}
-            </span>)}
-        </div>
+                <div className="user-ticket-desc">
+                    {viewModel?.message ?? ""}
+                </div>
+                {isLoading
+                    ? <div>Loading</div>
+                    : (<div style={{ marginTop: "auto" }} className="user-ticket-bottom-wrapper">
+
+                        {!isAuthenticated
+                            ? <RevealButton delay={index * 300}>
+                                <div className="user-ticket-button" onClick={() => loginWithRedirect()}>
+                                    {"Start"}
+                                </div>
+                            </RevealButton>
+                            : <div className="user-ticket-button user-ticket-button-disabled">
+                                {"Start"}
+                            </div>}
+
+                        {isAuthenticated && (<span className="user-ticket-logout" onClick={() => logout()}>
+                            {"Log ud"}
+                        </span>)}
+
+                    </div>)
+                }
+            </div>
+        </Reveal>
     );
 }
