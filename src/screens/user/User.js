@@ -2,6 +2,8 @@ import React from 'react'
 import "./User.css";
 
 import LoginOptionTicket from "./LoginOptionTicket.js";
+
+import UserInformation from "./userInformation/UserInformation.js";
 import Footer from "../../components/footer/Footer.js";
 
 export default function User() {
@@ -19,7 +21,7 @@ export default function User() {
                 {tickets.map((ticket, index) => <LoginOptionTicket viewModel={ticket} index={index}/>)}
                 </div>
             </div>
-            <div style={{backgroundColor: "#8694A6", height: "120vh"}}></div>
+            <UserInformation />
             <Footer />
         </div>
     )
