@@ -3,6 +3,7 @@ import "./Home.css";
 
 import backgroundImage from "./back.jpg";
 import InfoLorumIpsum from "./InfoLorumIpsum.js";
+import Quotes from "./Quotes.js";
 import Footer from "../../components/footer/Footer.js";
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
             <img src={backgroundImage} className="home-background-image" alt="Security background" />
             <Divider1 />
             <InfoLorumIpsum />
-            <div style={{ backgroundColor: "#8694A6", height: "50vh" }}></div>
+            <Quotes />
             <Footer />
             {/* <div style={{ backgroundColor: "#6D7B8C", height: "100vh" }}></div> */}
         </div>

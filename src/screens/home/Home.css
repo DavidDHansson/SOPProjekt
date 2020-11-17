@@ -9,6 +9,43 @@
     object-fit: cover;
 }
 
+/* QUOTES */
+
+.home-quotes-main-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background-color: var(--theme-color-4);
+}
+
+.home-quotes-wrapper {
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center;
+    width: 80%;
+}
+
+.home-quotes-wrapper > div {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-quotes-wrapper > div > p:first-child {
+    height: 100px;
+    font-family: Roboto-LightItalic;
+    padding: 20px
+}
+
+.home-quotes-wrapper > div > p:last-child {
+    font-family: Roboto-Medium;
+    font-size: 22px;
+}
+
+/* INFO */
+
 .home-info-wrapper {
     display: flex;
     flex-direction: row;
