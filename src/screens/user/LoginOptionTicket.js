@@ -12,13 +12,13 @@ import * as Reveal from 'react-reveal/Fade';
 
 export default function LoginOptionTicket(props) {
 
-    const { viewModel, index } = props;
+    const { viewModel} = props;
 
     switch (viewModel.type) {
         case "firebase":
-            return <FirebaseTicket viewModel={viewModel} index={index} />
+            return <FirebaseTicket viewModel={viewModel}/>
         case "auth0":
-            return <Auth0Ticket viewModel={viewModel} index={index} />
+            return <Auth0Ticket viewModel={viewModel}/>
         default:
             return <></>
     }
@@ -27,7 +27,7 @@ export default function LoginOptionTicket(props) {
 const firebaseAuth = firebase.auth();
 function FirebaseTicket(props) {
 
-    const { viewModel, index } = props;
+    const { viewModel} = props;
     const [user] = useAuthState(firebaseAuth);
 
     function signInWithGoogle() {
@@ -66,7 +66,7 @@ function FirebaseTicket(props) {
 
 function Auth0Ticket(props) {
 
-    const { viewModel, index } = props;
+    const { viewModel } = props;
     const { isAuthenticated, loginWithRedirect, logout, user, isLoading } = useAuth0();
     
     return (

@@ -18,7 +18,7 @@ export default function User() {
         <div className="user-wrapper">
             <div className="user-options-wrapper">
                 <div className="user-options-ticket-wrapper">
-                {tickets.map((ticket, index) => <LoginOptionTicket viewModel={ticket} index={index}/>)}
+                {tickets.map(ticket => <LoginOptionTicket viewModel={ticket}/>)}
                 </div>
             </div>
             <Divider />
