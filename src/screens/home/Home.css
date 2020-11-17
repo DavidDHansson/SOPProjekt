@@ -9,8 +9,67 @@
     object-fit: cover;
 }
 
+.home-info-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin-top: 25vh;
+}
 
+.home-info-wrapper:last-child {
+    margin-bottom: 25vh;
+}
 
+.home-info-image {
+    width: 40%;
+}
+
+.home-info-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 40%;
+}
+
+.home-info-title {
+    font-size: 60px;
+    font-family: Roboto-Bold;
+    color: var(--title-color-dark);
+}
+
+.home-info-text {
+    font-size: 22px;
+    font-family: Roboto-Regular;
+    color: var(--text-color-dark);
+}
+
+.home-info-main-wrapper {
+    background-color: var(--theme-color-5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.home-info-color5 {
+    background-color: var(--theme-color-5);
+}
+
+/* MEDIA */
+
+@media screen and (max-width: 900px) {
+    .home-info-wrapper {
+        flex-direction: column;
+    }
+    .home-info-text-wrapper {
+        width: 100%;
+    }
+
+}
 
 /* DIVIDERS */
 
