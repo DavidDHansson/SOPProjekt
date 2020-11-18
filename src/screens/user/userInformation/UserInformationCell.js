@@ -1,7 +1,9 @@
 import React from 'react'
+import scrollToTop from '../../../components/scroll/ScrollToTop.js';
+
+import ScrollToTop from "../../../components/scroll/ScrollToTop.js";
 
 export default function UserInformationCell(props) {
-
 
     if (props.viewModel.alignment === "left") {
         return (
@@ -23,6 +25,7 @@ export default function UserInformationCell(props) {
 }
 
 function Cell(props) {
+
     const { name, img, email, id, phoneNumber, emailVerified, type, isLoggedIn } = props.viewModel;
 
     return (
@@ -38,7 +41,9 @@ function Cell(props) {
             </div>)
             : (<div className="user-info-cell-active">
                 <h1>{type}</h1>
-                <div><span>{`${type} is not configured yet, check it out at the top of the page`}</span></div>
+                <div><span>{`${type} is not configured yet`}</span></div>
+                <div><a onClick={() => scrollToTop()}>Check it out at the top</a></div>
+                <div></div>
             </div>)
     );
 }
