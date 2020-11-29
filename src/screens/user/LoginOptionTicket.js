@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import "./User.css";
 
 import { useAuth0 } from "@auth0/auth0-react";
 import firebase from "../../components/firebase/Firebase.js";
 import { useAuthState } from "react-firebase-hooks/auth";
 import "firebase/auth";
+import { UserContext } from "../../components/userContext/userContext.js";
 
 import * as Reveal from 'react-reveal/Fade';
 import { useHistory } from "react-router-dom";
@@ -26,7 +27,7 @@ export default function LoginOptionTicket(props) {
 }
 
 function CustomAuthTicket(props) {
-    
+
     const history = useHistory();
     const { viewModel } = props;
     const [user, setUser] = useContext(UserContext);
