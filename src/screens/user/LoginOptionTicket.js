@@ -9,7 +9,6 @@ import "firebase/auth";
 import * as Reveal from 'react-reveal/Fade';
 import { useHistory } from "react-router-dom";
 
-
 export default function LoginOptionTicket(props) {
 
     const { viewModel} = props;
@@ -127,7 +126,7 @@ function Auth0Ticket(props) {
                     : (<div style={{ marginTop: "auto" }} className="user-ticket-bottom-wrapper">
 
                         {!isAuthenticated
-                            ? <div className="user-ticket-button user-ticket-button-enabled" onClick={() => loginWithRedirect({redirectUri: "http://localhost:3000/user"})}>
+                            ? <div className="user-ticket-button user-ticket-button-enabled" onClick={() => loginWithRedirect({redirectUri: window.location.hostname === "localhost" ? "http://localhost:3000/user" : "https://4hansson.dk/sop/#/user"})}>
                                 {"Start"}
                             </div>
 

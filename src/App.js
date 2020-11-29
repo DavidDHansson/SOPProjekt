@@ -3,7 +3,7 @@ import { Auth0Provider } from "@auth0/auth0-react";
 
 // Router
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
     Route
 } from "react-router-dom";
@@ -24,7 +24,7 @@ function App() {
                 <Auth0Provider
                     domain="dev-e5stgef2.eu.auth0.com"
                     clientId="50PGGYOULsiDBVaLd2H55Z6Rsi1PrSjq"
-                    redirectUri={window.location.origin}
+                    redirectUri={window.location.hostname === "localhost" ? "http://localhost:3000/user" : "https://4hansson.dk/sop/#/user"}
                 >
                     <Nav />
                     <Switch>
