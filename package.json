@@ -2,6 +2,7 @@
   "name": "sopadmin",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://4hansson.dk/sop",
   "dependencies": {
     "@auth0/auth0-react": "^1.1.0",
     "@testing-library/jest-dom": "^5.11.5",

@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext, useEffect} from 'react'
 
 import { useAuth0 } from "@auth0/auth0-react";
 import firebase from "../../../components/firebase/Firebase.js";
 import { useAuthState } from "react-firebase-hooks/auth";
+
+// Context
+import { UserContext } from "../../../components/userContext/userContext.js";
 
 import UserInformationCell from "./UserInformationCell.js";
 
@@ -11,8 +14,56 @@ export default function UserInformationTicket(props) {
         <div className="user-info-wrapper">
             <FirebaseInfo />
             <Auth0Info />
+            <CustomAuthInfo />
         </div>
     )
+}
+
+function CustomAuthInfo() {
+
+    const [user, setUser] = useContext(UserContext);
+
+    useEffect(() => {
+        if(user === undefined) {
+            fetch("https://4hansson.dk/api/sop/getUser.php")
+            .then(data => data.json())
+            .then(data => {
+                if(data.response === "success") {   
+                    setUser(data)
+                } else {
+                    setUser(undefined);
+                }
+            });
+        }
+    }, []);
+
+    return (
+        user !== undefined
+        ? <UserInformationCell viewModel={{
+            type: "PHP/MySQL",
+            name: user?.email ?? "",
+            img: "",
+            email: user?.email ?? "",
+            id: user?.id ?? "",
+            regDate: user?.reg_date ?? "",
+            phoneNumber: "",
+            emailVerified: false,
+            alignment: "left",
+            isLoggedIn: true
+        }} />
+        : <UserInformationCell viewModel={{
+            type: "PHP/MySQL",
+            name: "",
+            img: "",
+            email: "",
+            id: "",
+            regDate: "",
+            phoneNumber: "",
+            emailVerified: false,
+            alignment: "left",
+            isLoggedIn: false
+        }} />
+    );
 }
 
 const firebaseAuth = firebase.auth();
@@ -28,6 +79,7 @@ function FirebaseInfo() {
                 img: user?.photoURL ?? "",
                 email: user?.email ?? "",
                 id: user?.uid ?? "",
+                regDate: "",
                 phoneNumber: user?.phoneNumber ?? "",
                 emailVerified: user?.emailVerified ?? false,
                 alignment: "left",
@@ -39,6 +91,7 @@ function FirebaseInfo() {
                 img: "",
                 email: "",
                 id: "",
+                regDate: "",
                 phoneNumber: "",
                 emailVerified: false,
                 alignment: "left",
@@ -54,7 +107,7 @@ function Auth0Info() {
     if (isLoading) {
         <div>Loading Profile...</div>
     }
-    console.log(user);
+
     return (
         isAuthenticated
             ? (
@@ -64,6 +117,7 @@ function Auth0Info() {
                     img: user.picture ?? "",
                     email: user.email ?? "",
                     id: user.sub ?? "",
+                    regDate: "",
                     phoneNumber: "",
                     emailVerified: user.email_verified ?? false,
                     alignment: "right",
@@ -77,6 +131,7 @@ function Auth0Info() {
                     img: "",
                     email: "",
                     id: "",
+                    regDate: "",
                     phoneNumber: "",
                     emailVerified: false,
                     alignment: "right",
