@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: var(--theme-color-5);
 }
 
 .user-options-wrapper {
@@ -46,9 +47,14 @@
 }
 
 .user-ticket-title {
-    font-family: 'Roboto-Bold';
-    font-size: 26px;
-    color: var(--title-color-dark);
+    font-family: Roboto-Medium;
+    font-size: 40px;
+    background-color: var(--theme-color-2);
+    color: var(--white-text-darker);
+    width: calc(100% - 60px);
+    margin-left: 30px;
+    border-radius: 10px;
+    text-align: center;
 }
 
 .user-ticket-desc {
@@ -126,4 +132,44 @@
 .user-ticket-logout:hover {
     color: var(--link-color-hover);
     cursor: pointer;
+}
+
+/* DIVIDER */
+.custom-shape-divider-bottom-1605630478 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1605630478 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 113px;
+}
+
+.custom-shape-divider-bottom-1605630478 .shape-fill {
+    fill: var(--theme-color-5);
+}
+
+.custom-shape-divider-bottom-1605690683 {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1605690683 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 110px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1605690683 .shape-fill {
+    fill: var(--nav-color);
 }

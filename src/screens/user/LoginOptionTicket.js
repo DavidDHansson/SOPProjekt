@@ -12,13 +12,13 @@ import * as Reveal from 'react-reveal/Fade';
 
 export default function LoginOptionTicket(props) {
 
-    const { viewModel, index } = props;
+    const { viewModel} = props;
 
     switch (viewModel.type) {
         case "firebase":
-            return <FirebaseTicket viewModel={viewModel} index={index} />
+            return <FirebaseTicket viewModel={viewModel}/>
         case "auth0":
-            return <Auth0Ticket viewModel={viewModel} index={index} />
+            return <Auth0Ticket viewModel={viewModel}/>
         default:
             return <></>
     }
@@ -27,7 +27,7 @@ export default function LoginOptionTicket(props) {
 const firebaseAuth = firebase.auth();
 function FirebaseTicket(props) {
 
-    const { viewModel, index } = props;
+    const { viewModel} = props;
     const [user] = useAuthState(firebaseAuth);
 
     function signInWithGoogle() {
@@ -46,15 +46,15 @@ function FirebaseTicket(props) {
                 </div>
                 <div style={{ marginTop: "auto" }} className="user-ticket-bottom-wrapper">
 
-                    {!user
-                        ? <div className="user-ticket-button" onClick={() => signInWithGoogle()}>
+                    {user === null
+                        ? <div className="user-ticket-button user-ticket-button-enabled" onClick={() => signInWithGoogle()}>
                             {"Start"}
                         </div>
                         : <div className="user-ticket-button user-ticket-button-disabled">
                             {"Start"}
                         </div>}
 
-                    {user && (<span className="user-ticket-logout" onClick={() => firebaseAuth.signOut()}>
+                    {user !== null && (<span className="user-ticket-logout" onClick={() => firebaseAuth.signOut()}>
                         {"Log ud"}
                     </span>)}
 
@@ -66,7 +66,7 @@ function FirebaseTicket(props) {
 
 function Auth0Ticket(props) {
 
-    const { viewModel, index } = props;
+    const { viewModel } = props;
     const { isAuthenticated, loginWithRedirect, logout, user, isLoading } = useAuth0();
     
     return (
@@ -83,7 +83,7 @@ function Auth0Ticket(props) {
                     : (<div style={{ marginTop: "auto" }} className="user-ticket-bottom-wrapper">
 
                         {!isAuthenticated
-                            ? <div className="user-ticket-button user-ticket-button-enabled" onClick={() => loginWithRedirect()}>
+                            ? <div className="user-ticket-button user-ticket-button-enabled" onClick={() => loginWithRedirect({redirectUri: "http://localhost:3000/user"})}>
                                 {"Start"}
                             </div>
 

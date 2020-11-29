@@ -21,25 +21,25 @@
 
 .home-quotes-wrapper {
     display: flex;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
     align-items: center;
     width: 80%;
 }
 
-.home-quotes-wrapper > div {
+.home-quotes-wrapper>div {
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.home-quotes-wrapper > div > p:first-child {
+.home-quotes-wrapper>div>p:first-child {
     height: 100px;
     font-family: Roboto-LightItalic;
     padding: 20px
 }
 
-.home-quotes-wrapper > div > p:last-child {
+.home-quotes-wrapper>div>p:last-child {
     font-family: Roboto-Medium;
     font-size: 22px;
 }
@@ -106,6 +106,7 @@
     .home-info-wrapper {
         flex-direction: column;
     }
+
     .home-info-text-wrapper {
         width: 100%;
     }
@@ -115,7 +116,7 @@
 /* DIVIDERS */
 
 /* TOP DIVIDER */
-.custom-shape-divider-bottom-1605608647 {
+.custom-shape-divider-bottom-1605684340 {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -125,15 +126,15 @@
     transform: rotate(180deg);
 }
 
-.custom-shape-divider-bottom-1605608647 svg {
+.custom-shape-divider-bottom-1605684340 svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 111px;
+    height: 60px;
 }
 
-.custom-shape-divider-bottom-1605608647 .shape-fill {
-    fill: #BFC7D9;
+.custom-shape-divider-bottom-1605684340 .shape-fill {
+    fill: var(--theme-color-5);
 }
 
 /* LORUM WAVE */
