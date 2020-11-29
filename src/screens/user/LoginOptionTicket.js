@@ -109,9 +109,6 @@ function Auth0Ticket(props) {
     const { viewModel } = props;
     const { isAuthenticated, loginWithRedirect, logout, user, isLoading } = useAuth0();
     
-    // TODO:
-    // FIX REDIRECTURI to the correct baseurl
-    
     return (
         <Reveal duration={1500}>
             <div className="user-ticket-wrapper">
