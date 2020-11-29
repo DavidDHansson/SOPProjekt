@@ -1,14 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import "./DHAuth.css";
+
+// Context
+import { UserContext } from "../../components/userContext/userContext.js";
 
 export default function DHAuth() {
 
     const [password, setPassword] = useState();
     const [email, setEmail] = useState();
+    const [user, setUser] = useContext(UserContext);
 
     function login(e) {
         e.preventDefault();
-
+        
         fetch("https://4hansson.dk/api/sop/login.php", {
             method: "POST",
             body: JSON.stringify({
@@ -18,7 +22,7 @@ export default function DHAuth() {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                setUser(data);
             })
             .catch(err => console.log(err));
     }
