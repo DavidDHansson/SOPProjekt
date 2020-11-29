@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 
 import { useAuth0 } from "@auth0/auth0-react";
 import firebase from "../../../components/firebase/Firebase.js";
 import { useAuthState } from "react-firebase-hooks/auth";
+
+// Context
+import { UserContext } from "../../../components/userContext/userContext.js";
 
 import UserInformationCell from "./UserInformationCell.js";
 
@@ -11,8 +14,31 @@ export default function UserInformationTicket(props) {
         <div className="user-info-wrapper">
             <FirebaseInfo />
             <Auth0Info />
+            <CustomAuthInfo />
         </div>
     )
+}
+
+function CustomAuthInfo() {
+
+    // TODO: GET USER
+    // Try to get user with cookies and session in php
+
+    const [user, setUser] = useContext(UserContext);
+
+    return (
+        <UserInformationCell viewModel={{
+            type: "PHP/MySQL",
+            name: user?.email ?? "",
+            img: "",
+            email: user?.email ?? "",
+            id: 0,
+            phoneNumber: "",
+            emailVerified: false,
+            alignment: "left",
+            isLoggedIn: true
+        }} />
+    );
 }
 
 const firebaseAuth = firebase.auth();
@@ -54,7 +80,7 @@ function Auth0Info() {
     if (isLoading) {
         <div>Loading Profile...</div>
     }
-    console.log(user);
+
     return (
         isAuthenticated
             ? (

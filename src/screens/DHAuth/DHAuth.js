@@ -4,8 +4,11 @@ import "./DHAuth.css";
 // Context
 import { UserContext } from "../../components/userContext/userContext.js";
 
+import { useHistory } from "react-router-dom";
+
 export default function DHAuth() {
 
+    const history = useHistory();
     const [password, setPassword] = useState();
     const [email, setEmail] = useState();
     const [user, setUser] = useContext(UserContext);
@@ -23,6 +26,8 @@ export default function DHAuth() {
             .then(res => res.json())
             .then(data => {
                 setUser(data);
+                console.log(data);
+                history.push("/user");
             })
             .catch(err => console.log(err));
     }
