@@ -9,6 +9,7 @@ import {
 
 import Home     from "./screens/home/Home.js";
 import User     from "./screens/user/User.js";
+import DHAuth   from "./screens/DHAuth/DHAuth.js";
 import Nav      from "./components/nav/Nav.js";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
                 <Switch>
                     <Route path="/" exact={true} component={Home} />
                     <Route path="/user" component={User} />
+                    <Route path="/customauth" component={DHAuth} />
                 </Switch>
             </Auth0Provider>
         </Router>
