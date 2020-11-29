@@ -27,7 +27,13 @@ function CustomAuthInfo() {
         if(user === undefined) {
             fetch("https://4hansson.dk/api/sop/getUser.php")
             .then(data => data.json())
-            .then(data => setUser(data));
+            .then(data => {
+                if(data.response === "success") {   
+                    setUser(data)
+                } else {
+                    setUser(undefined);
+                }
+            });
         }
     }, []);
 

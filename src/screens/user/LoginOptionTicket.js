@@ -36,13 +36,19 @@ function CustomAuthTicket(props) {
         if (user === undefined) {
             fetch("https://4hansson.dk/api/sop/getUser.php")
                 .then(data => data.json())
-                .then(data => setUser(data));
+                .then(data => {
+                    if (data.response === "success") {
+                        setUser(data)
+                    } else {
+                        setUser(undefined);
+                    }
+                });
         }
     }, []);
 
     function logOut() {
-        // TODO: create php api to clear session and cookies
         setUser(undefined);
+        fetch("https://4hansson.dk/api/sop/logout.php")
     }
 
     return (
