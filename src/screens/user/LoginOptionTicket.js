@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./User.css";
 
 import { useAuth0 } from "@auth0/auth0-react";
@@ -11,29 +11,38 @@ import { useHistory } from "react-router-dom";
 
 export default function LoginOptionTicket(props) {
 
-    const { viewModel} = props;
+    const { viewModel } = props;
 
     switch (viewModel.type) {
         case "firebase":
-            return <FirebaseTicket viewModel={viewModel}/>
+            return <FirebaseTicket viewModel={viewModel} />
         case "auth0":
-            return <Auth0Ticket viewModel={viewModel}/>
+            return <Auth0Ticket viewModel={viewModel} />
         case "custom":
-            return <CustomAuthTicket viewModel={viewModel}/>
+            return <CustomAuthTicket viewModel={viewModel} />
         default:
             return <></>
     }
 }
 
 function CustomAuthTicket(props) {
+    
     const history = useHistory();
-
-    // TODO:
-    // 1. Try to get user from cookies or session
-    // 2. Add func for "log ud", delete cookie, session and context
-    // 3. Add func for "start", redirect to /customauth
-
     const { viewModel } = props;
+    const [user, setUser] = useContext(UserContext);
+
+    useEffect(() => {
+        if (user === undefined) {
+            fetch("https://4hansson.dk/api/sop/getUser.php")
+                .then(data => data.json())
+                .then(data => setUser(data));
+        }
+    }, []);
+
+    function logOut() {
+        // TODO: create php api to clear session and cookies
+        setUser(undefined);
+    }
 
     return (
         <Reveal duration={1500}>
@@ -46,7 +55,7 @@ function CustomAuthTicket(props) {
                 </div>
                 <div style={{ marginTop: "auto" }} className="user-ticket-bottom-wrapper">
 
-                    {true
+                    {user === undefined
                         ? <div className="user-ticket-button user-ticket-button-enabled" onClick={() => history.push("/customauth")}>
                             {"Start"}
                         </div>
@@ -54,7 +63,7 @@ function CustomAuthTicket(props) {
                             {"Start"}
                         </div>}
 
-                    {false && (<span className="user-ticket-logout" onClick={() => history.push("/customauth")}>
+                    {user !== undefined && (<span className="user-ticket-logout" onClick={() => logOut()}>
                         {"Log ud"}
                     </span>)}
 
@@ -108,7 +117,7 @@ function Auth0Ticket(props) {
 
     const { viewModel } = props;
     const { isAuthenticated, loginWithRedirect, logout, user, isLoading } = useAuth0();
-    
+
     return (
         <Reveal duration={1500}>
             <div className="user-ticket-wrapper">
@@ -123,7 +132,7 @@ function Auth0Ticket(props) {
                     : (<div style={{ marginTop: "auto" }} className="user-ticket-bottom-wrapper">
 
                         {!isAuthenticated
-                            ? <div className="user-ticket-button user-ticket-button-enabled" onClick={() => loginWithRedirect({redirectUri: window.location.hostname === "localhost" ? "http://localhost:3000/user" : "https://4hansson.dk/sop/#/user"})}>
+                            ? <div className="user-ticket-button user-ticket-button-enabled" onClick={() => loginWithRedirect({ redirectUri: window.location.hostname === "localhost" ? "http://localhost:3000/user" : "https://4hansson.dk/sop/#/user" })}>
                                 {"Start"}
                             </div>
 

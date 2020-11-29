@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect} from 'react'
 
 import { useAuth0 } from "@auth0/auth0-react";
 import firebase from "../../../components/firebase/Firebase.js";
@@ -21,12 +21,7 @@ export default function UserInformationTicket(props) {
 
 function CustomAuthInfo() {
 
-    // TODO: GET USER
-    // Try to get user with cookies and session in php
-    // First check if it is set in context
-
     const [user, setUser] = useContext(UserContext);
-
 
     useEffect(() => {
         if(user === undefined) {
@@ -35,7 +30,6 @@ function CustomAuthInfo() {
             .then(data => setUser(data));
         }
     }, []);
-
 
     return (
         user !== undefined

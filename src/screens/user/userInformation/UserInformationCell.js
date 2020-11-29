@@ -1,7 +1,6 @@
 import React from 'react'
-import scrollToTop from '../../../components/scroll/ScrollToTop.js';
 
-import ScrollToTop from "../../../components/scroll/ScrollToTop.js";
+import scrollToTop from '../../../components/scroll/ScrollToTop.js';
 
 export default function UserInformationCell(props) {
 
