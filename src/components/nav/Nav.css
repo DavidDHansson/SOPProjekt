@@ -51,6 +51,7 @@
 .nav-user-button {
     font-size: 18px;
     font-family: Roboto-Bold;
+    white-space: nowrap;
 
     background-color: var(--button-color);
     border-bottom-width: 0;
@@ -80,4 +81,14 @@
 .nav-remove-link-styling:active {
     color: var(--nav-text-color-extended);
     cursor: pointer;
+}
+
+@media screen and (max-width: 1000px) {
+    .nav-user-button {
+        font-size: 14px;
+        margin-right: 20px;
+    }
+    .nav-flex-wrapper {
+        font-size: 18px;
+    }
 }
