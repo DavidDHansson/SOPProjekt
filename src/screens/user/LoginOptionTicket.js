@@ -33,23 +33,29 @@ function CustomAuthTicket(props) {
     const [user, setUser] = useContext(UserContext);
 
     useEffect(() => {
-        if (user === undefined) {
-            fetch("https://4hansson.dk/api/sop/getUser.php")
-                .then(data => data.json())
-                .then(data => {
-                    if (data.response === "success") {
-                        setUser(data)
-                    } else {
-                        setUser(undefined);
-                    }
-                });
-        }
+        checkUser();
     }, []);
 
     function logOut() {
         setUser(undefined);
         fetch("https://4hansson.dk/api/sop/logout.php")
     }
+
+    function checkUser() {
+        if (user === undefined) {
+            fetch("https://4hansson.dk/api/sop/getUser.php")
+                .then(data => data.json())
+                .then(data => {
+                    if (data.response === "success") {
+                        setUser(data)
+                        return true;
+                    } else {
+                        setUser(undefined);
+                        return false;
+                    }
+                });
+        }
+    }    
 
     return (
         <Reveal duration={1500}>
@@ -63,7 +69,7 @@ function CustomAuthTicket(props) {
                 <div style={{ marginTop: "auto" }} className="user-ticket-bottom-wrapper">
 
                     {user === undefined
-                        ? <div className="user-ticket-button user-ticket-button-enabled" onClick={() => history.push("/customauth")}>
+                        ? <div className="user-ticket-button user-ticket-button-enabled" onClick={() => !checkUser() && history.push("/customauth")}>
                             {"Start"}
                         </div>
                         : <div className="user-ticket-button user-ticket-button-disabled">
