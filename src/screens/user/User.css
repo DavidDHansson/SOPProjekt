@@ -7,7 +7,7 @@
 }
 
 .user-options-wrapper {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: var(--dark-theme-1);
     display: flex;
@@ -112,14 +112,26 @@
     cursor: pointer;
 }
 
+/* MEDIA */
+@media screen and (max-width: 1200px) {
+    .user-options-ticket-wrapper {
+        flex-direction: column;
+    }
+    .user-options-ticket-wrapper > div {
+        margin: 50px 0 50px;
+        width: 80%;
+    }
+    .user-options-wrapper {
+        padding: 200px 0 100px;
+    }
+}
+
 /* DIVIDER */
 .custom-shape-divider-bottom-1605630478 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    background-color: var(--dark-theme-1);
 }
 
 .custom-shape-divider-bottom-1605630478 svg {

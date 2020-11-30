@@ -8,14 +8,14 @@ export default function UserInformationCell(props) {
         return (
             <div className="user-info-cell-wrapper">
                 <Cell viewModel={props.viewModel} />
-                <div></div>
+                <div className="user-info-cell-prop"></div>
             </div>
         )
     } else if (props.viewModel.alignment === "right") {
         return (
             <div className="user-info-cell-wrapper">
-                <div></div>
-                <Cell viewModel={props.viewModel} />
+                <div className="user-info-cell-prop"></div>
+                <Cell viewModel={props.viewModel}/>
             </div>
         )
     } else {

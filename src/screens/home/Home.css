@@ -110,7 +110,10 @@
     .home-info-text-wrapper {
         width: 100%;
     }
-
+    .home-quotes-wrapper {
+        flex-direction: column;
+        width: 100%;
+    }
 }
 
 /* DIVIDERS */
@@ -131,6 +134,7 @@
     display: block;
     width: calc(100% + 1.3px);
     height: 60px;
+    transform: translateY(-2px);
 }
 
 .custom-shape-divider-bottom-1605684340 .shape-fill {
@@ -150,6 +154,7 @@
     display: block;
     width: calc(100% + 1.3px);
     height: 110px;
+    transform: translateY(2px);
 }
 
 .custom-shape-divider-bottom-color4 .shape-fill {
