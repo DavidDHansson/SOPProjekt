@@ -113,7 +113,7 @@
 }
 
 /* MEDIA */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1200px) {
     .user-options-ticket-wrapper {
         flex-direction: column;
     }
