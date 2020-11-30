@@ -95,3 +95,9 @@
     color: var(--link-color-hover);
     cursor: pointer;
 }
+
+@media screen and (max-width: 1200px) {
+    .dhauth-ticket-wrapper {
+        width: 80%;
+    }
+}

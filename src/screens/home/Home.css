@@ -102,6 +102,12 @@
 
 /* MEDIA */
 
+@media screen and (max-width: 1200px) {
+    .home-quotes-wrapper > div > p:first-child {
+        padding-bottom: 25%;
+    }
+}
+
 @media screen and (max-width: 900px) {
     .home-info-wrapper {
         flex-direction: column;
@@ -119,9 +125,6 @@
     }
     .home-info-title {
         font-size: 50px;
-    }
-    .home-quotes-wrapper > div > p:first-child {
-        padding-bottom: 25%;
     }
 }
 
