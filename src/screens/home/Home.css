@@ -101,7 +101,6 @@
 }
 
 /* MEDIA */
-
 @media screen and (max-width: 1200px) {
     .home-quotes-wrapper > div > p:first-child {
         padding-bottom: 25%;
@@ -133,8 +132,7 @@
 /* TOP DIVIDER */
 .custom-shape-divider-bottom-1605684340 {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    top: calc(100vh - 60px);
     width: 100%;
     overflow: hidden;
     line-height: 0;
