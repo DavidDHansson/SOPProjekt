@@ -110,4 +110,8 @@
     .user-info-cell-active {
         width: 100%;
     }
+    .user-info-cell-active * {
+        padding: 10px 0 10px 0;
+        word-break: break-all;
+    }
 }
