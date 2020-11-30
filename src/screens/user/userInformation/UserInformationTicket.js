@@ -40,7 +40,7 @@ function CustomAuthInfo() {
     return (
         user !== undefined
         ? <UserInformationCell viewModel={{
-            type: "PHP/MySQL",
+            type: "Custom",
             name: user?.email ?? "",
             img: "",
             email: user?.email ?? "",
@@ -52,7 +52,7 @@ function CustomAuthInfo() {
             isLoggedIn: true
         }} />
         : <UserInformationCell viewModel={{
-            type: "PHP/MySQL",
+            type: "Custom",
             name: "",
             img: "",
             email: "",

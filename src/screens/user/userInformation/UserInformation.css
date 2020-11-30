@@ -101,7 +101,13 @@
     }
     .user-info-cell-wrapper > div {
         transform: translateY(0%);
-        margin: 50px 50px;
+        margin: 50px 0 0 0;
+        width: 100%;
+    }
+    .user-info-wrapper:first-child {
+        padding-top: 100px;
+    }
+    .user-info-cell-active {
         width: 100%;
     }
 }

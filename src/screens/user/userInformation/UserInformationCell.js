@@ -41,7 +41,7 @@ function Cell(props) {
             </div>)
             : (<div className="user-info-cell-active">
                 <h1>{type}</h1>
-                <div><span>{`${type} er ikke konfigureret endnu`}</span></div>
+                <div><span>{`${type} er ikke konfigureret endnu`}</span></div><br />
                 <div><a onClick={() => scrollToTop()}>Check det ud i toppen!</a></div>
                 <div></div>
             </div>)
