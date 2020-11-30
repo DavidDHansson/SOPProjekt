@@ -36,8 +36,8 @@ function Cell(props) {
                 <div><span>Email: </span><span>{email}</span></div>
                 <div><span>Id: </span><span>{id}</span></div>
                 {phoneNumber && (<div><span>Id: </span><span>{phoneNumber}</span></div>)}
-                <div><span>Reg Dato: </span><span>{regDate}</span></div>
-                <div><span>Er email bekræftet: </span><span>{emailVerified ? "Ja" : "Nej"}</span></div>
+                <div><span>Dato: </span><span>{regDate}</span></div>
+                <div><span>Er Email Bekræftet: </span><span>{emailVerified ? "Ja" : "Nej"}</span></div>
             </div>)
             : (<div className="user-info-cell-active">
                 <h1>{type}</h1>
