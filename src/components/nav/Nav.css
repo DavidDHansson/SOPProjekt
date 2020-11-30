@@ -83,12 +83,25 @@
     cursor: pointer;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 450px) {
     .nav-user-button {
         font-size: 14px;
-        margin-right: 20px;
+        margin-right: 50px;
     }
     .nav-flex-wrapper {
         font-size: 18px;
+    }
+    .nav-main-wrapper {
+        overflow-x: auto;
+    }
+    .nav-main-wrapper div {
+        white-space: nowrap;
+        padding: 8px;
+        margin: 5px;
+        border: 1px solid var(--nav-text-color-extended);
+        border-radius: 6px;
+    }
+    .nav-main-wrapper div:first-child {
+        margin-left: calc((5 * 26px) + 50px);
     }
 }
