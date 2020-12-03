@@ -7,7 +7,7 @@
 }
 
 .user-options-wrapper {
-    min-height: 100vh;
+    min-height: 85vh;
     width: 100%;
     background-color: var(--dark-theme-1);
     display: flex;
@@ -139,6 +139,7 @@
     display: block;
     width: calc(100% + 1.3px);
     height: 113px;
+    transform: translateY(2px);
 }
 
 .custom-shape-divider-bottom-1605630478 .shape-fill {
