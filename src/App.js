@@ -17,24 +17,29 @@ import Nav from "./components/nav/Nav.js";
 // Context
 import { UserProvider } from "./components/userContext/userContext.js";
 
+// From Https to Https
+import HttpsRedirect from 'react-https-redirect';
+
 function App() {
     return (
-        <UserProvider>
-            <Router>
-                <Auth0Provider
-                    domain="dev-e5stgef2.eu.auth0.com"
-                    clientId="50PGGYOULsiDBVaLd2H55Z6Rsi1PrSjq"
-                    redirectUri={window.location.hostname === "localhost" ? "http://localhost:3000/user" : "https://4hansson.dk/sop/#/user"}
-                >
-                    <Nav />
-                    <Switch>
-                        <Route path="/" exact={true} component={Home} />
-                        <Route path="/user" component={User} />
-                        <Route path="/customauth" component={DHAuth} />
-                    </Switch>
-                </Auth0Provider>
-            </Router>
-        </UserProvider>
+        <HttpsRedirect>
+            <UserProvider>
+                <Router>
+                    <Auth0Provider
+                        domain="dev-e5stgef2.eu.auth0.com"
+                        clientId="50PGGYOULsiDBVaLd2H55Z6Rsi1PrSjq"
+                        redirectUri={window.location.hostname === "localhost" ? "http://localhost:3000/user" : "https://4hansson.dk/sop/#/user"}
+                    >
+                        <Nav />
+                        <Switch>
+                            <Route path="/" exact={true} component={Home} />
+                            <Route path="/user" component={User} />
+                            <Route path="/customauth" component={DHAuth} />
+                        </Switch>
+                    </Auth0Provider>
+                </Router>
+            </UserProvider>
+        </HttpsRedirect>
     );
 }
 
