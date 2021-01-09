@@ -46,7 +46,7 @@ function SignUp() {
             .then(data => {
                 console.log(data);
                 if(data == "success") {
-                    // history.push("/user"); 
+                    history.push("/user"); 
                 } else {
                     setErrorMsg(data ?? "An error has occurred");
                 }
