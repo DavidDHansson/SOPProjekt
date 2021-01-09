@@ -28,6 +28,7 @@ function SignUp() {
     const [password, setPassword] = useState();
     const [email, setEmail] = useState();
     const history = useHistory();
+    const [errorMsg, setErrorMsg] = useState("");
 
     function signup(e) {
         e.preventDefault();
@@ -42,7 +43,14 @@ function SignUp() {
             })
         })
             .then(res => res.json())
-            .then(() => history.push("/user"))
+            .then(data => {
+                console.log(data);
+                if(data == "success") {
+                    // history.push("/user"); 
+                } else {
+                    setErrorMsg(data ?? "An error has occurred");
+                }
+            })
             .catch(err => console.log(err));
     }
 
@@ -55,6 +63,7 @@ function SignUp() {
                     <input type="password" placeholder="Kode" onInput={e => setPassword(e.target.value)} />
                     <input type="submit" className="dhauth-submit" value="Tilmeld dig!" />
                     <span onClick={() => { history.push("?login"); window.location.reload();}}>Log ind</span>
+                    <span style={{textDecoration: "none", color: "rgb(240,50,50)", transform: "translateY(5px)", fontSize: "12px"}}>{errorMsg}</span>
                 </form>
             </div>
         </div>
@@ -67,6 +76,7 @@ function LogIn() {
     const [email, setEmail] = useState();
     const setUser = useContext(UserContext)[1];
     const history = useHistory();
+    const [errorMsg, setErrorMsg] = useState("");
 
     function login(e) {
         e.preventDefault();
@@ -82,9 +92,16 @@ function LogIn() {
             .then(data => {
                 setUser(data);
                 console.log(data);
-                history.push("/user");
+                if(data.response == "success") {
+                    history.push("/user"); 
+                } else {
+                    setErrorMsg(data.response ?? "An error has occurred");
+                }
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                console.log(err)
+                setErrorMsg("An error has occurred");
+            });
     }
 
     return (
@@ -96,6 +113,7 @@ function LogIn() {
                     <input type="password" placeholder="Kode" onInput={e => setPassword(e.target.value)} />
                     <input type="submit" className="dhauth-submit" value="Log ind!" />
                     <span onClick={() => { history.push("?signup"); window.location.reload();}}>Tilmeld dig</span>
+                    <span style={{textDecoration: "none", color: "rgb(240,50,50)", transform: "translateY(5px)", fontSize: "12px"}}>{errorMsg}</span>
                 </form>
             </div>
         </div>
