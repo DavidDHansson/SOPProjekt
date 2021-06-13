@@ -31,7 +31,7 @@ function Cell(props) {
         isLoggedIn
             ? (<div className="user-info-cell-active">
                 <h1>{type}</h1>
-                <img src={img} />
+                <img src={img} alt="Profile"/>
                 <div><span>Navn: </span><span>{name}</span></div>
                 <div><span>Email: </span><span>{email}</span></div>
                 <div><span>Id: </span><span>{id}</span></div>

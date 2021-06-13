@@ -17,7 +17,7 @@ import Nav from "./components/nav/Nav.js";
 // Context
 import { UserProvider } from "./components/userContext/userContext.js";
 
-// From Https to Https
+// From Http to Https
 import HttpsRedirect from 'react-https-redirect';
 
 function App() {

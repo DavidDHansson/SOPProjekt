@@ -8,12 +8,12 @@ import * as Reveal from 'react-reveal/Reveal';
 
 export default function InfoLorumIpsum(props) {
 
-    if (props.index == 0) {
+    if (props.index === 0) {
         return (
             <div className="home-info-main-wrapper home-info-color5">
                 <Reveal>
                     <div className="home-info-wrapper">
-                        <img src={svg1} className="home-info-image" />
+                        <img src={svg1} className="home-info-image" alt="Home info"/>
                         <div className="home-info-text-wrapper">
                             <p className="home-info-title">Lorem ipsum dolor</p>
                             <p className="home-info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nisi et augue bibendum lobortis nec et diam. In blandit sagittis turpis, nec molestie lorem auctor eu. Morbi fermentum mi libero, sit amet elementum nisl volutpat at. Donec vehicula enim vitae enim placerat eleifend.</p>
@@ -26,18 +26,18 @@ export default function InfoLorumIpsum(props) {
                             <p className="home-info-title">Morbi eleifend lacus</p>
                             <p className="home-info-text">Morbi eleifend lacus quis sapien gravida tincidunt vestibulum ut ligula. Vivamus quis ex tellus. Mauris elementum nisi sit amet erat scelerisque, hendrerit ullamcorper odio tempor. Cras a mauris nisl. Ut sagittis aliquet dui sed congue. Nam aliquam eget orci non ornare. Fusce nec turpis elementum, mattis nisi id, porttitor ipsum. Nunc semper sodales mi mollis fringilla. Pellentesque in odio at lorem imperdiet bibendum ac ac nulla.</p>
                         </div>
-                        <img src={svg2} className="home-info-image" />
+                        <img src={svg2} className="home-info-image" alt="Home info"/>
                     </div>
                 </Reveal>
                 <Divider2 index={props.index} />
             </div>
         )
-    } else if (props.index == 1) {
+    } else if (props.index === 1) {
         return (
             <div className="home-info-main-wrapper home-info-color4">
                 <Reveal>
                     <div className="home-info-wrapper">
-                        <img src={svg3} className="home-info-image" />
+                        <img src={svg3} className="home-info-image" alt="Home info"/>
                         <div className="home-info-text-wrapper">
                             <p className="home-info-title">Lorem ipsum dolor</p>
                             <p className="home-info-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non nisi et augue bibendum lobortis nec et diam. In blandit sagittis turpis, nec molestie lorem auctor eu. Morbi fermentum mi libero, sit amet elementum nisl volutpat at. Donec vehicula enim vitae enim placerat eleifend.</p>
